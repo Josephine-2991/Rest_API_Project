@@ -1,12 +1,17 @@
 
 const search_filter=document.querySelector('#search-input')
 const flower= document.querySelector('.flower')
+const section = document.querySelector('.section')
+const flag = document.querySelector('.flag')
+
+
+
 const createCountry=(src,country, population, region, capital)=>{
     let div=document.createElement('div')
   div.classList.add("country-card")
   div.innerHTML=`
-      <img src='${src}' alt="flag of ${country}" class='flag'>
-      <div class="card-text">
+        <img src='${src}' alt="flag of ${country}" class='flag'>
+        <div class="card-text">
         <h4 class='countryName'>${country}</h4>
          <p>Population: ${population}</p>
          <p>Region: ${region}</p>
@@ -17,11 +22,6 @@ const createCountry=(src,country, population, region, capital)=>{
     return div
            
  }
-
-
-const section=document.querySelector('.section')
-console.log(section)
-// const input1= document.querySelector('.input1')
 
 
 let countriesData=[]
@@ -61,6 +61,8 @@ const displayCountries=()=>{
   
  
 
- search_filter.addEventListener('input',displayCountries)
+ flag.addEventListener('click',()=> {
+  windows.location.href="info.html?name=${country.name.common}";
+ })
  
         
