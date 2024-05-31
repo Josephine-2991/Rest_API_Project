@@ -20,6 +20,13 @@ body{
     font-size: 16px;
 
 }
+/* .flower {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1240px;
+    gap: 0.7rem;
+
+} */
 main{
     display: flex;
     flex-direction: column;
@@ -87,8 +94,9 @@ main{
 /*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
  @media  only screen and (max-width:600px){
     .filter_search {
-     display: flex;
-     flex-direction: column;
+     display: block;
+    
+     
     
         }
     
@@ -120,7 +128,7 @@ main{
 }
 
 /*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
-#input{
+#input, #input:focus #input:active {
     background-color: transparent;
     border: none;
     outline:none;
@@ -129,18 +137,14 @@ main{
     color: var(--White);
 }
 #input::placeholder{
+  background-color:var(--Dark_Blue) ;
   font-size: 0.8rem;
   color: var(--White,0.6);
 }
-.dropdown{
-    margin: 1.5rem 1rem 0rem 1rem;
-    color: var(--White, 0.7);
-    font-size: 0.8rem;
-}
+
 .filter{
   background-color: var(--Dark_Blue);
-  width: 60%;
-  margin: 1.5rem  1rem 0rem 1rem;
+  margin: 0rem  3rem 0rem 1rem;
   padding: 1rem;
   border-radius: 0.4rem;
   outline: none;
@@ -148,38 +152,71 @@ main{
   color: var(--White,0.7);
   font-size: 0.8rem;
 }
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
+@media only screen and (max-width:600px) {
+    .filter{
+    width: 60%;
+    margin: 1.5rem 2rem 0rem 1rem;
+
+
+    
+
+}
+}
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
 .option{
     font-size: 0.7rem;
     
 } 
+.flower{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    max-width: 1240px;
+
+    
+} 
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
+ @media only screen and (max-width:600px) {
+    .flower {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.7rem; 
+        max-width: 1240px;
+        margin:3rem auto;
+        }
+ } 
+
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
 
 .country-card{
-    border-radius: 1rem;
-    display: flex;
+    background-color:var(--Dark_Blue) ;
+    /* border: 2px solid red;
+    border-radius: 1rem; */
+     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; 
     width: 75%;
-    margin:0 auto;
+    margin:0 auto 50px auto;
+    padding: 15px;
+    line-height: 1rem;
+    font-size: 10px;
 }
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
 
+
+/*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
 .flag{
-    width:40%;
+    width: 100%;
+    height: 150%;
 }
 .card-text{
-  margin-top: 1rem;
+  margin-top: 0.1rem;
 }
 
-.back {
-    display: flex;
-    gap: 0.8rem;
-    align-items: center;
-    background-color: var(--Dark_Blue);
-    width: 40%;
-    margin: 1.5rem 1rem 3rem 1rem;
-    padding: 1rem;
-    border-radius: 0.4rem;
-    outline: none;
-    border: none;
-    color: var(--White, 0.7);
-    font-size: 1rem;
+countryName{
+    margin: 0rem 0rem 2rem 0rem ;
+    font-size:0.5rem ;
+}
+p{
+font-size: 0.4rem
 }

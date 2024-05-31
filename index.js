@@ -1,12 +1,13 @@
 
 const search_filter=document.querySelector('#search-input')
+const flower= document.querySelector('.flower')
 const createCountry=(src,country, population, region, capital)=>{
     let div=document.createElement('div')
   div.classList.add("country-card")
   div.innerHTML=`
-      <img src='${src}' alt="flag of ${country}">
+      <img src='${src}' alt="flag of ${country}" class='flag'>
       <div class="card-text">
-        <h3 >${country}</h3>
+        <h4 class='countryName'>${country}</h4>
          <p>Population: ${population}</p>
          <p>Region: ${region}</p>
          <p>Capital:${capital}</p>
@@ -38,7 +39,9 @@ let name=countryData.name.official
     let region = countryData.region
     let capital = countryData.capital[0]
     let country = createCountry(src,name, population, region, capital)
-     section.appendChild(country)
+
+    section.appendChild(flower)
+    flower.appendChild(country)
 
    }
 
