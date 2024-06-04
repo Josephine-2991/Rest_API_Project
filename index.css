@@ -161,7 +161,7 @@ main{
     font-size: 0.7rem;
     
 } 
-.flower{
+.countrycardContainer{
     display:grid;
     grid-template-columns: repeat(4,1fr);
     max-width: 1240px;
@@ -170,7 +170,7 @@ main{
 } 
 /*-----------------------------------------------MEDIA QUERIES-------------------------------------------*/
  @media only screen and (max-width:600px) {
-    .flower {
+    .countrycardContainer{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         /* gap: 0.7rem;  */
@@ -214,4 +214,7 @@ countryName{
 }
 p{
 font-size: 0.4rem
+}
+div .disabled{
+display: none;
 }

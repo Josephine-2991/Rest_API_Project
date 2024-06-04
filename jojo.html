@@ -1,0 +1,72 @@
+<!-- country_details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Details</title>
+</head>
+
+<body>
+    <h1>Country Details</h1>
+    <div id="country-details"></div>
+
+    <script>
+        // Extract country name from URL query parameter
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const countryName = urlParams.get('country');
+
+        // Fetch data for the selected country
+        fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Display country details
+                const countryDetails = document.getElementById('country-details');
+                const country = data[0]; // Assuming the first item in the array is the country
+                countryDetails.innerHTML = `
+                    <h2>${country.name.common}</h2>
+                    <p>Capital: ${country.capital}</p>
+                    <p>Population: ${country.population}</p>
+                    <!-- Add more details as needed -->
+                `;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+
+
+
+
+
+
+
+
+<div class="card-text1">
+    <div>
+        <h3>Germany</h3>
+        <p><span class="part">Population:</span> 145,666</p>
+        <p><span class="part">Region:</span>Europe</p>
+        <p><span class="part">Capital:</span> Berlin</p>
+        <p><span class="part">Capital:</span>Population: 145,666</p>
+        <p><span class="part">Capital:</span>Region: Europe</p>
+    </div>
+
+    <div>
+        <p><span class="part">Capital:</span> Berlin</p>
+        <p><span class="part">Population:</span> 145,666</p>
+        <p><span class="part">Region:</span> Europe</p>
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+</html>
